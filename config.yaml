@@ -1,0 +1,22 @@
+features:
+  categorical:
+  - country
+  - channel
+  - is_high_risk_merchant
+  numeric:
+  - amount
+  - hour
+  - customer_tenure_months
+  - previous_fraud_count
+  - device_trust_score
+paths:
+  artifacts_dir: artifacts
+  holdout_csv: fraud_holdout_unlabelled.csv
+  metrics_path: artifacts/metrics.json
+  model_path: artifacts/model.joblib
+  predictions_path: predictions.csv
+  train_csv: fraud_train.csv
+train:
+  model: logistic_regression
+  random_state: 13
+  test_size: 0.25
